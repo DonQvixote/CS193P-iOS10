@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FaceViewController: VCLLoggingViewController {
 
     @IBOutlet weak var faceView: FaceView! {
         didSet {

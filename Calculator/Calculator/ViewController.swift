@@ -51,5 +51,13 @@ class ViewController: UIViewController {
             displayValue = result
         }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        brain.addUnaryOperation(named: "✅") { [weak self] in
+            self?.display.textColor = UIColor.green
+            return sqrt($0)
+        }
+    }
 }
 

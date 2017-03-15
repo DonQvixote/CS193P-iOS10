@@ -10,6 +10,10 @@ import Foundation
 
 struct  CalculatorBrain {
     
+    mutating func addUnaryOperation(named symbol: String, _ operation: @escaping (Double) -> Double) {
+        operations[symbol] = Operation.unaryOperation(operation)
+    }
+    
     private var accumlator: Double?
     
     private enum Operation {

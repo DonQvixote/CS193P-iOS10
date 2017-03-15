@@ -215,7 +215,7 @@
                                                         <rect key="frame" x="88.5" y="0.0" width="78" height="106.5"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <state key="normal" title="."/>
+                                                        <state key="normal" title="✅"/>
                                                         <connections>
                                                             <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MQe-SI-z1o"/>
                                                         </connections>
