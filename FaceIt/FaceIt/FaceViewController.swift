@@ -68,4 +68,3 @@ class FaceViewController: VCLLoggingViewController {
     
     private let mouthCurvatures = [FacialExpression.Mouth.grin : 0.5, .frown : -1.0, .smile : 1.0, .smirk : -0.5]
 }
-
