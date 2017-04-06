@@ -52,6 +52,13 @@ class ViewController: UIViewController {
         }
     }
     
+    private func showSizeClasses() {
+        if !userIsInTheMiddleOfTyping {
+            display.textAlignment = .center
+            display.text = "width " + traitCollection.horizontalSizeClass.description + " height " + traitCollection.verticalSizeClass.description
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         brain.addUnaryOperation(named: "✅") { [weak self] in
@@ -59,5 +66,29 @@ class ViewController: UIViewController {
             return sqrt($0)
         }
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        showSizeClasses()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: { coordinator in
+            self.showSizeClasses()
+        }, completion: nil)
+    }
 }
 
+extension UIUserInterfaceSizeClass: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .compact:
+            return "Compact"
+        case .regular:
+            return "Regular"
+        case .unspecified:
+            return "??"
+        }
+    }
+}
